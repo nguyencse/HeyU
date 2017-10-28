@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {
   StyleSheet,
   Text,
@@ -7,7 +7,8 @@ import {
   StatusBar,
   TextInput,
   TouchableOpacity
-} from 'react-native';
+} from 'react-native'
+import styles from '../styles/Style'
 
 export default class Login extends Component {
   constructor(props) {
@@ -34,6 +35,6 @@ export default class Login extends Component {
           </View>
         </Image>
       </View>
-    );
+    )
   }
 }
