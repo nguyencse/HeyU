@@ -3,24 +3,16 @@ import {
 } from 'react-native'
 import styles from '../styles/Style'
 import { TabNavigator } from 'react-navigation'
-import Messages from '../components/Messages'
 import Login from '../components/Login'
+import Messages from '../components/Messages'
+import Contacts from '../components/Contacts'
 
 export default Main = TabNavigator({
   Messages: {
     screen: Messages
   },
-  Messages1: {
-    screen: Messages
-  },
-  Messages2: {
-    screen: Messages
-  },
-  Messages3: {
-    screen: Messages
-  },
-  Messages4: {
-    screen: Messages
+  Contacts: {
+    screen: Contacts
   }
 }, {
     tabBarPosition: 'bottom',

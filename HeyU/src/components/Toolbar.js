@@ -19,9 +19,8 @@ export default class Toolbar extends Component {
         <TouchableOpacity style={styles.toolbarButtonLeft}>
           <Text style={styles.toolbarButtonTextLeft}>Edit</Text>
         </TouchableOpacity>
-        <Text style={styles.toolbarTitle}>Messages</Text>
+        <Text style={styles.toolbarTitle}>{this.props.title}</Text>
         <TouchableOpacity style={styles.toolbarButtonRight}>
-          {/* <Text style={styles.toolbarButtonTextRight}>Edit</Text> */}
           <Image source={btnSearch} style={styles.toolbarButtonImage} />
         </TouchableOpacity>
       </View>

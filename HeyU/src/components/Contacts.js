@@ -6,14 +6,15 @@ import {
   Image
 } from 'react-native'
 import styles from '../styles/Style'
+import Toolbar from './Toolbar'
 
-export default class Contact extends Component {
+export default class Contacts extends Component {
   static navigationOptions = {
-    header: null,
-    tabBarLabel: 'Messages',
+    header: <Toolbar title="Contacts" />,
+    tabBarLabel: 'Contacts',
     tabBarIcon: ({ tintColor }) => (
       <Image
-        source={require('../assets/img/icon-message.png')}
+        source={require('../assets/img/icons/ic-contact.png')}
         style={[styles.iconTab, { tintColor: tintColor }]}
       />
     )
@@ -23,7 +24,7 @@ export default class Contact extends Component {
     return (
       <View style={styles.container}>
         <StatusBar hidden />
-        <Text>Messages</Text>
+        <Text>Contacts</Text>
       </View>
     )
   }
