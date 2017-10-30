@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import {
-  StyleSheet,
   Text,
   View,
   Image,
@@ -9,31 +8,46 @@ import {
   TouchableOpacity
 } from 'react-native'
 import styles from '../styles/Style'
+import { NavigationActions } from 'react-navigation';
 
 export default class Login extends Component {
-  constructor(props) {
-    super(props)
-    backgroundLogin = require('../assets/img/background-login.png')
+  static navigationOptions = {
+    header: null
+  }
+
+  // constructor(props) {
+  //   super(props)
+  //   backgroundLogin = require('../assets/img/background.png')
+  // }
+
+  onLogin = () => {
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Main'})
+      ]
+    })
+    this.props.navigation.dispatch(resetAction)
   }
 
   render() {
     return (
       <View style={styles.container}>
         <StatusBar hidden />
-        <Image source={backgroundLogin} style={styles.background}>
+        <View style={styles.background}>
           <View style={styles.logoContainer}>
             <Text style={styles.appName}>HeyU</Text>
             <Text style={styles.appDescription}>Free chat app</Text>
           </View>
           <View style={styles.loginForm}>
-            <TextInput placeholder='joindoe@example.com' underlineColorAndroid={'rgba(0,0,0,0)'} style={styles.textInput}/>
-            <TextInput secureTextEntry={true} placeholder='•••••••••••••••••••••••' underlineColorAndroid={'rgba(0,0,0,0)'} style={styles.textInput}/>
-            <TouchableOpacity>
-              <Text style={styles.button}>SIGN UP</Text>
+            <TextInput placeholder='joindoe@example.com' underlineColorAndroid={'rgba(0,0,0,0)'} style={styles.textInput} />
+            <TextInput secureTextEntry={true} placeholder='•••••••••••••••••••••••' underlineColorAndroid={'rgba(0,0,0,0)'} style={styles.textInput} />
+            <TouchableOpacity onPress={this.onLogin}>
+              <Text style={styles.button}>SIGN IN</Text>
             </TouchableOpacity>
-            <Text style={styles.textSignIn}>Already have an account? Sign in</Text>
+            <Text style={styles.textSignIn}>Have not any account yet? Sign up</Text>
           </View>
-        </Image>
+        </View>
       </View>
     )
   }

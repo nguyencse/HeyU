@@ -6,9 +6,7 @@ export default styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    width: null,
-    height: null,
-    resizeMode: 'stretch'
+    backgroundColor: '#008530'
   },
   logoContainer: {
     flex: 1,
@@ -27,7 +25,8 @@ export default styles = StyleSheet.create({
     color: 'white'
   },
   textInput: {
-    backgroundColor: '#9C1727',
+    backgroundColor: 'white',
+    borderColor: 'red',
     marginTop: 10,
     marginLeft: 40,
     marginRight: 40,
@@ -43,11 +42,17 @@ export default styles = StyleSheet.create({
     borderRadius: 30,
     textAlign: 'center',
     textAlignVertical: 'center',
-    color: '#9C1727'
+    color: '#008530',
+    fontWeight: 'bold'
   },
   textSignIn: {
     color: 'white',
     textAlign: 'center',
     marginTop: 10
+  },
+  iconTab: {
+    width: 48,
+    height: 48,
+    resizeMode: 'stretch'
   }
 })
