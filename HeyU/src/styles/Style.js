@@ -46,7 +46,6 @@ export default styles = StyleSheet.create({
     alignItems: 'center'
   },
   buttonText: {
-    backgroundColor: 'red',
     textAlign: 'center',
     color: '#008530',
     fontWeight: 'bold',
