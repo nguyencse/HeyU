@@ -21,11 +21,11 @@ export default class MessageItem extends Component {
   render() {
     let swipeoutBtns = [
       {
-        component: <ButtonRemove />
+        component: <ButtonDelete />
       }
     ]
     return (
-      <Swipeout left={swipeoutBtns} sensitivity={0}>
+      <Swipeout right={swipeoutBtns}>
         <TouchableOpacity onPress={() => this.onClickItem(this.props.item.name)}>
           <View style={styles.messageRow}>
             <Image source={avatar} style={styles.avatarMessage} />
@@ -43,11 +43,12 @@ export default class MessageItem extends Component {
   }
 }
 
-class ButtonRemove extends Component {
+class ButtonDelete extends Component {
   render() {
     return (
       <TouchableOpacity style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center' }}>
         <Image source={require('../assets/img/icons/ic-trash-white-64dp.png')} style={{ width: 29, height: 29 }} />
+        <Text style={{color: 'white'}}>Delete</Text>
       </TouchableOpacity>
     )
   }

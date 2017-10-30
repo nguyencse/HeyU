@@ -17,6 +17,7 @@ export default Main = TabNavigator({
 }, {
     tabBarPosition: 'bottom',
     animationEnabled: true,
+    swipeEnabled: false,
     tabBarOptions: {
       activeTintColor: 'white',
       style: {
