@@ -42,14 +42,15 @@ export default styles = StyleSheet.create({
     marginRight: 40,
     borderRadius: 26,
     overflow: 'hidden',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   buttonText: {
+    backgroundColor: 'red',
     textAlign: 'center',
     color: '#008530',
     fontWeight: 'bold',
-    overflow: 'hidden',
-    lineHeight: 52
+    overflow: 'hidden'
   },
   textSignIn: {
     color: 'white',
