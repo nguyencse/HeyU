@@ -42,8 +42,8 @@ export default class Login extends Component {
           <View style={styles.loginForm}>
             <TextInput placeholder='joindoe@example.com' underlineColorAndroid={'rgba(0,0,0,0)'} style={styles.textInput} />
             <TextInput secureTextEntry={true} placeholder='•••••••••••••••••••••••' underlineColorAndroid={'rgba(0,0,0,0)'} style={styles.textInput} />
-            <TouchableOpacity onPress={this.onLogin}>
-              <Text style={styles.button}>SIGN IN</Text>
+            <TouchableOpacity onPress={this.onLogin} style={styles.button}>
+              <Text style={styles.buttonText}>SIGN IN</Text>
             </TouchableOpacity>
             <Text style={styles.textSignIn}>Have not any account yet? Sign up</Text>
           </View>

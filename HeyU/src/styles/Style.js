@@ -31,19 +31,25 @@ export default styles = StyleSheet.create({
     marginLeft: 40,
     marginRight: 40,
     borderRadius: 30,
-    textAlign: 'center'
+    textAlign: 'center',
+    height: 52
   },
   button: {
     backgroundColor: 'white',
-    height: 51,
     marginTop: 20,
+    height: 52,
     marginLeft: 40,
     marginRight: 40,
-    borderRadius: 30,
+    borderRadius: 26,
+    overflow: 'hidden',
+    alignItems: 'center'
+  },
+  buttonText: {
     textAlign: 'center',
-    textAlignVertical: 'center',
     color: '#008530',
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    overflow: 'hidden',
+    lineHeight: 52
   },
   textSignIn: {
     color: 'white',
