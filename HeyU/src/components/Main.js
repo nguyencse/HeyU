@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import {
 } from 'react-native'
 import styles from '../styles/Style'
+import colors from '../colors/Color'
 import { TabNavigator } from 'react-navigation'
 import Login from '../components/Login'
 import Messages from '../components/Messages'
@@ -19,12 +20,12 @@ export default Main = TabNavigator({
     animationEnabled: true,
     swipeEnabled: false,
     tabBarOptions: {
-      activeTintColor: 'white',
+      activeTintColor: colors.white,
       style: {
-        backgroundColor: '#008530'
+        backgroundColor: colors.primary
       },
       indicatorStyle: {
-        backgroundColor: 'white'
+        backgroundColor: colors.white
       },
       showIcon: true,
       showLabel: false
