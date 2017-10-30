@@ -10,21 +10,18 @@ export default Main = TabNavigator({
   Messages: {
     screen: Messages
   },
-  Login: {
-    screen: Login
+  Messages1: {
+    screen: Messages
   },
-  Login1: {
-    screen: Login
+  Messages2: {
+    screen: Messages
   },
-  Login2: {
-    screen: Login
+  Messages3: {
+    screen: Messages
   },
-  Login3: {
-    screen: Login
-  },
-  Login4: {
-    screen: Login
-  },
+  Messages4: {
+    screen: Messages
+  }
 }, {
     tabBarPosition: 'bottom',
     animationEnabled: true,

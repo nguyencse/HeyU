@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native'
+import colors from '../colors/Color'
 
 export default styles = StyleSheet.create({
   container: {
@@ -6,7 +7,7 @@ export default styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    backgroundColor: '#008530'
+    backgroundColor: colors.primary
   },
   logoContainer: {
     flex: 1,
@@ -17,16 +18,16 @@ export default styles = StyleSheet.create({
     flex: 2
   },
   appName: {
-    color: 'white',
+    color: colors.white,
     fontSize: 60,
     fontWeight: 'bold'
   },
   appDescription: {
-    color: 'white'
+    color: colors.white
   },
   textInput: {
-    backgroundColor: 'white',
-    borderColor: 'red',
+    backgroundColor: colors.white,
+    borderColor: colors.red,
     marginTop: 10,
     marginLeft: 40,
     marginRight: 40,
@@ -35,7 +36,7 @@ export default styles = StyleSheet.create({
     height: 52
   },
   button: {
-    backgroundColor: 'white',
+    backgroundColor: colors.white,
     marginTop: 20,
     height: 52,
     marginLeft: 40,
@@ -47,18 +48,88 @@ export default styles = StyleSheet.create({
   },
   buttonText: {
     textAlign: 'center',
-    color: '#008530',
+    color: colors.primary,
     fontWeight: 'bold',
     overflow: 'hidden'
   },
   textSignIn: {
-    color: 'white',
+    color: colors.white,
     textAlign: 'center',
     marginTop: 10
   },
   iconTab: {
-    width: 48,
-    height: 48,
-    resizeMode: 'stretch'
+    flex: 1,
+    resizeMode: 'contain'
+  },
+  messageRow: {
+    flex: 1,
+    flexDirection: 'row',
+    marginTop: 10,
+    marginBottom: 10
+  },
+  avatarMessage: {
+    width: 52,
+    height: 52,
+    borderRadius: 100,
+    marginLeft: 10,
+    marginRight: 10
+  },
+  messageSummary: {
+    flex: 4.5,
+    justifyContent: 'center'
+  },
+  messageAuthor:{
+    fontSize: 14,
+    color: colors.black
+  },
+  messageBegin: {
+    color: 'gray'
+  },
+  messageTimeContainer: {
+    flex: 1,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  messageTime: {
+    fontSize: 10
+  },
+  toolbar: {
+    flexDirection: 'row',
+    backgroundColor: colors.primary,
+    height: 52,
+    alignItems: 'center',
+    padding: 10
+  },
+  toolbarButtonLeft: {
+    flex: 1,
+    alignItems: 'flex-start'
+  },
+  toolbarButtonRight: {
+    flex: 1,
+    alignItems: 'flex-end'
+  },
+  toolbarTitle: {
+    flex: 4,
+    flexDirection: 'row',
+    textAlign: 'center',
+    color: colors.black
+  },
+  toolbarButtonTextLeft: {
+    color: colors.white,
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'left'
+  },
+  toolbarButtonTextRight: {
+    color: colors.white,
+    fontSize: 14,
+    fontWeight: 'bold',
+    textAlign: 'right'
+  },
+  toolbarButtonImage: {
+    width: 20,
+    height: 20,
+    resizeMode: 'contain'
   }
 })
