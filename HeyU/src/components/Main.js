@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import {
+  View,
   Image
 } from 'react-native'
 import styles from '../styles/Style'
@@ -9,12 +10,13 @@ import Toolbar from '../components/Toolbar'
 import Login from '../components/Login'
 import Messages from '../components/Messages'
 import Contacts from '../components/Contacts'
+import Profile from '../components/Profile'
 
 export default Main = TabNavigator({
   Messages: {
     screen: Messages,
     navigationOptions: {
-      header: <Toolbar title="Messages" />,
+      header: <Toolbar title='Messages' />,
       tabBarLabel: 'Messages',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -27,11 +29,47 @@ export default Main = TabNavigator({
   Contacts: {
     screen: Contacts,
     navigationOptions: {
-      header: <Toolbar title="Contacts" />,
+      header: <Toolbar title='Contacts' />,
       tabBarLabel: 'Contacts',
       tabBarIcon: ({ tintColor }) => (
         <Image
-          source={require('../assets/img/icons/ic-contact.png')}
+          source={require('../assets/img/icons/ic-users-green-64dp.png')}
+          style={[styles.iconTab, { tintColor: tintColor }]}
+        />
+      )
+    }
+  },
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      header: <Toolbar title='Profile' />,
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({ tintColor }) => (
+        <MiddleTabIcon tintColor={tintColor}/>
+      )
+    }
+  },
+  Profile1: {
+    screen: Profile,
+    navigationOptions: {
+      header: <Toolbar title='Profile' />,
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({ tintColor }) => (
+        <Image
+          source={require('../assets/img/icons/ic-user-green-64dp.png')}
+          style={[styles.iconTab, { tintColor: tintColor }]}
+        />
+      )
+    }
+  },
+  Profile2: {
+    screen: Profile,
+    navigationOptions: {
+      header: <Toolbar title='Profile' />,
+      tabBarLabel: 'Profile',
+      tabBarIcon: ({ tintColor }) => (
+        <Image
+          source={require('../assets/img/icons/ic-user-green-64dp.png')}
           style={[styles.iconTab, { tintColor: tintColor }]}
         />
       )
@@ -42,9 +80,9 @@ export default Main = TabNavigator({
     animationEnabled: true,
     swipeEnabled: false,
     tabBarOptions: {
-      activeTintColor: colors.white,
+      activeTintColor: colors.black,
       style: {
-        backgroundColor: colors.primary
+        backgroundColor: colors.white
       },
       indicatorStyle: {
         backgroundColor: colors.white
@@ -53,3 +91,17 @@ export default Main = TabNavigator({
       showLabel: false
     }
   })
+
+
+  class MiddleTabIcon extends Component{
+    render(){
+      return(
+        <View style={styles.iconTabMiddleContainer}>
+          <Image
+            source={require('../assets/img/icons/ic-plus-white-64dp.png')}
+            style={[styles.iconTabMiddle, { tintColor: this.props.tintColor }]}
+          />
+        </View>
+      )
+    }
+  }

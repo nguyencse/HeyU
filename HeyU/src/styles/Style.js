@@ -59,13 +59,31 @@ export default styles = StyleSheet.create({
   },
   iconTab: {
     flex: 1,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    width: 29,
+    height: 29
+  },
+  iconTabMiddleContainer: {
+    borderRadius: 100,
+    width: 52,
+    height: 52,
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 26
+  },
+  iconTabMiddle:{
+    flex: 1,
+    resizeMode: 'contain',
+    width: 16,
+    height: 16
   },
   messageRow: {
     flex: 1,
     flexDirection: 'row',
-    marginTop: 10,
-    marginBottom: 10
+    paddingTop: 10,
+    paddingBottom: 10,
+    backgroundColor: colors.white
   },
   messageAvatarContainer: {
     width: 52,
