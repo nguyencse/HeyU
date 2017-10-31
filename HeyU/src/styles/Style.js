@@ -70,7 +70,7 @@ export default styles = StyleSheet.create({
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 26
+    marginBottom: 25
   },
   iconTabMiddle:{
     flex: 1,

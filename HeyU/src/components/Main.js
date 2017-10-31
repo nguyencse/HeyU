@@ -20,7 +20,7 @@ export default Main = TabNavigator({
       tabBarLabel: 'Messages',
       tabBarIcon: ({ tintColor }) => (
         <Image
-          source={require('../assets/img/icons/ic-message.png')}
+          source={require('../assets/img/icons/ic-message-green-64dp.png')}
           style={[styles.iconTab, { tintColor: tintColor }]}
         />
       )
@@ -80,15 +80,17 @@ export default Main = TabNavigator({
     animationEnabled: true,
     swipeEnabled: false,
     tabBarOptions: {
-      activeTintColor: colors.black,
+      activeTintColor: colors.primary,
+      inactiveTintColor: colors.black,
       style: {
         backgroundColor: colors.white
       },
       indicatorStyle: {
-        backgroundColor: colors.white
+        backgroundColor: colors.primary
       },
       showIcon: true,
-      showLabel: false
+      showLabel: false,
+      animationEnabled: false
     }
   })
 
