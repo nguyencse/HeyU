@@ -64,22 +64,15 @@ export default styles = StyleSheet.create({
   messageRow: {
     flex: 1,
     flexDirection: 'row',
-    paddingTop: 10,
-    paddingBottom: 10,
-    backgroundColor: 'white'
-  },
-  avatarMessageContainer:{
-    width: 52,
-    height: 52,
-    borderRadius: 100,
-    overflow: 'hidden',
-    marginLeft: 10,
-    marginRight: 10
+    marginTop: 10,
+    marginBottom: 10
   },
   avatarMessage: {
     width: 52,
     height: 52,
-    resizeMode: 'stretch'
+    borderRadius: 100,
+    marginLeft: 10,
+    marginRight: 10
   },
   messageSummary: {
     flex: 4.5,
