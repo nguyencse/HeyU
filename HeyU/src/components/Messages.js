@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text,
   StatusBar,
-  Image,
   FlatList
 } from 'react-native'
 import styles from '../styles/Style'
 import MessageItem from './MessageItem'
-import Toolbar from './Toolbar'
 
 const dataMessages = [
   { key: 1, name: 'Ryan Giggs', avatar: '../assets/img/avatar.jpg', lastMessage: 'Lorem ipsum dolor...' },
@@ -22,17 +19,6 @@ const dataMessages = [
 ]
 
 export default class Messages extends Component {
-  static navigationOptions = {
-    header: <Toolbar title="Messages" />,
-    tabBarLabel: 'Messages',
-    tabBarIcon: ({ tintColor }) => (
-      <Image
-        source={require('../assets/img/icons/ic-message.png')}
-        style={[styles.iconTab, { tintColor: tintColor }]}
-      />
-    )
-  }
-
   render() {
     return (
       <View style={styles.container}>
