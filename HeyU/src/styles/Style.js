@@ -65,8 +65,8 @@ export default styles = StyleSheet.create({
   },
   iconTabMiddleContainer: {
     borderRadius: 100,
-    width: 52,
-    height: 52,
+    width: 45,
+    height: 45,
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
@@ -124,10 +124,12 @@ export default styles = StyleSheet.create({
   },
   toolbar: {
     flexDirection: 'row',
-    backgroundColor: colors.primary,
+    backgroundColor: colors.white,
     height: 52,
     alignItems: 'center',
-    padding: 10
+    padding: 10,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.grayLite
   },
   toolbarButtonLeft: {
     flex: 1,
@@ -144,9 +146,8 @@ export default styles = StyleSheet.create({
     color: colors.black
   },
   toolbarButtonTextLeft: {
-    color: colors.white,
+    color: colors.primary,
     fontSize: 14,
-    fontWeight: 'bold',
     textAlign: 'left'
   },
   toolbarButtonTextRight: {
@@ -158,6 +159,7 @@ export default styles = StyleSheet.create({
   toolbarButtonImage: {
     width: 20,
     height: 20,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    tintColor: colors.primary
   }
 })

@@ -84,17 +84,22 @@ export default Main = TabNavigator({
       activeTintColor: colors.primary,
       inactiveTintColor: colors.black,
       style: {
-        backgroundColor: colors.white
+        backgroundColor: colors.white,
+        borderTopWidth: 1,
+        borderTopColor: colors.grayLite
       },
       indicatorStyle: {
         backgroundColor: colors.primary
       },
       showIcon: true,
       showLabel: false,
-      animationEnabled: false
+      animationEnabled: false,
+      iconStyle: {
+        width: 45,
+        height: 45
+      }
     }
   })
-
 
   class MiddleTabIcon extends Component{
     render(){

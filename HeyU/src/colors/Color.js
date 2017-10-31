@@ -5,5 +5,6 @@ export default colors = {
   black: 'black',
   silver: '#bdc3c7',
   transparent: 'transparent',
-  gray: '#cccccc'
+  gray: '#cccccc',
+  grayLite: '#ecf0f1'
 }
