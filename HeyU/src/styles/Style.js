@@ -104,6 +104,8 @@ export default styles = StyleSheet.create({
   messageAvatar: {
     width: 52,
     height: 52,
+    borderWidth: 1,
+    borderColor: colors.grayLite,
     ...Platform.select({
       android: {borderRadius: 100}
     })

@@ -9,11 +9,6 @@ import styles from '../../styles/Style'
 import Swipeout from 'react-native-swipeout'
 
 export default class MessageItem extends Component {
-  constructor(props) {
-    super(props)
-    avatar = require('../../assets/img/frank-lampard.jpg')
-  }
-
   onClickItem = (text) => {
     alert(text)
   }
@@ -29,7 +24,7 @@ export default class MessageItem extends Component {
         <TouchableOpacity onPress={() => this.onClickItem(this.props.item.name)}>
           <View style={styles.messageRow}>
             <View style={styles.messageAvatarContainer}>
-              <Image source={avatar} style={styles.messageAvatar} />
+              <Image source={{uri: this.props.item.avatar}} style={styles.messageAvatar} />
             </View>
             <View style={styles.messageSummary}>
               <Text style={styles.messageAuthor}>{this.props.item.name}</Text>
