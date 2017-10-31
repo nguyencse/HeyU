@@ -7,7 +7,11 @@ export default styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    backgroundColor: colors.primary
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+    width: null,
+    height: null,
+    resizeMode: 'stretch'
   },
   logoContainer: {
     flex: 1,
@@ -26,8 +30,10 @@ export default styles = StyleSheet.create({
     color: colors.white
   },
   textInput: {
-    backgroundColor: colors.white,
-    borderColor: colors.red,
+    backgroundColor: colors.transparent,
+    borderWidth: 1,
+    borderColor: colors.white,
+    color: colors.white,
     marginTop: 10,
     marginLeft: 40,
     marginRight: 40,

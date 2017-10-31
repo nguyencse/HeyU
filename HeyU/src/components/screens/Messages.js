@@ -4,8 +4,8 @@ import {
   StatusBar,
   FlatList
 } from 'react-native'
-import styles from '../styles/Style'
-import MessageItem from './MessageItem'
+import styles from '../../styles/Style'
+import MessageItem from '../partials/MessageItem'
 
 const dataMessages = [
   { key: 1, name: 'Ryan Giggs', avatar: '../assets/img/avatar.jpg', lastMessage: 'Lorem ipsum dolor...' },

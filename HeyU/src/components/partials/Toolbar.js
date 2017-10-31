@@ -5,12 +5,12 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native'
-import styles from '../styles/Style'
+import styles from '../../styles/Style'
 
 export default class Toolbar extends Component {
   constructor(props){
     super(props)
-    btnSearch = require('../assets/img/icons/ic-search.png')
+    btnSearch = require('../../assets/img/icons/ic-search.png')
   }
 
   render() {

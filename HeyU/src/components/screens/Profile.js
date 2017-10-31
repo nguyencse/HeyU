@@ -4,7 +4,7 @@ import {
   Text,
   StatusBar
 } from 'react-native'
-import styles from '../styles/Style'
+import styles from '../../styles/Style'
 
 export default class Contacts extends Component {
   render() {
