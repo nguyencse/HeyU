@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native'
+import { StyleSheet, Platform } from 'react-native'
 import colors from '../colors/Color'
 
 export default styles = StyleSheet.create({
@@ -67,12 +67,20 @@ export default styles = StyleSheet.create({
     marginTop: 10,
     marginBottom: 10
   },
-  avatarMessage: {
+  messageAvatarContainer: {
     width: 52,
     height: 52,
     borderRadius: 100,
+    overflow: 'hidden',
     marginLeft: 10,
     marginRight: 10
+  },
+  messageAvatar: {
+    width: 52,
+    height: 52,
+    ...Platform.select({
+      android: {borderRadius: 100}
+    })
   },
   messageSummary: {
     flex: 4.5,

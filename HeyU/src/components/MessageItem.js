@@ -28,7 +28,9 @@ export default class MessageItem extends Component {
       <Swipeout right={swipeoutBtns}>
         <TouchableOpacity onPress={() => this.onClickItem(this.props.item.name)}>
           <View style={styles.messageRow}>
-            <Image source={avatar} style={styles.avatarMessage} />
+            <View style={styles.messageAvatarContainer}>
+              <Image source={avatar} style={styles.messageAvatar} />
+            </View>
             <View style={styles.messageSummary}>
               <Text style={styles.messageAuthor}>{this.props.item.name}</Text>
               <Text style={styles.messageBegin}>{this.props.item.lastMessage}</Text>
