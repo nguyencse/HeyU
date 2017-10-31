@@ -44,8 +44,8 @@ export default Main = TabNavigator({
     navigationOptions: {
       header: <Toolbar title='Profile' />,
       tabBarLabel: 'Profile',
-      tabBarIcon: ({ tintColor }) => (
-        <MiddleTabIcon tintColor={tintColor}/>
+      tabBarIcon: () => (
+        <MiddleTabIcon />
       )
     }
   },
@@ -56,7 +56,7 @@ export default Main = TabNavigator({
       tabBarLabel: 'Profile',
       tabBarIcon: ({ tintColor }) => (
         <Image
-          source={require('../assets/img/icons/ic-user-green-64dp.png')}
+          source={require('../assets/img/icons/ic-users-green-64dp.png')}
           style={[styles.iconTab, { tintColor: tintColor }]}
         />
       )
@@ -76,6 +76,7 @@ export default Main = TabNavigator({
     }
   }
 }, {
+    initialRouteName: 'Profile',
     tabBarPosition: 'bottom',
     animationEnabled: true,
     swipeEnabled: false,
@@ -101,7 +102,7 @@ export default Main = TabNavigator({
         <View style={styles.iconTabMiddleContainer}>
           <Image
             source={require('../assets/img/icons/ic-plus-white-64dp.png')}
-            style={[styles.iconTabMiddle, { tintColor: this.props.tintColor }]}
+            style={[styles.iconTabMiddle, { tintColor: 'white' }]}
           />
         </View>
       )

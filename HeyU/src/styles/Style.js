@@ -60,8 +60,8 @@ export default styles = StyleSheet.create({
   iconTab: {
     flex: 1,
     resizeMode: 'contain',
-    width: 29,
-    height: 29
+    width: 20,
+    height: 20
   },
   iconTabMiddleContainer: {
     borderRadius: 100,
@@ -70,13 +70,15 @@ export default styles = StyleSheet.create({
     backgroundColor: colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: 25
+    marginBottom: 25,
+    position: 'absolute'
   },
   iconTabMiddle:{
     flex: 1,
     resizeMode: 'contain',
-    width: 16,
-    height: 16
+    width: 20,
+    height: 20,
+    zIndex: 1
   },
   messageRow: {
     flex: 1,
