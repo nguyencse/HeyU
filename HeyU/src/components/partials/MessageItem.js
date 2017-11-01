@@ -28,7 +28,7 @@ export default class MessageItem extends Component {
             </View>
             <View style={styles.messageSummary}>
               <Text style={styles.messageAuthor}>{this.props.item.name}</Text>
-              <Text style={styles.messageBegin}>{this.props.item.lastMessage}</Text>
+              <Text numberOfLines={1} style={styles.messageBegin}>{this.props.item.lastMessage}</Text>
             </View>
             <View style={styles.messageTimeContainer}>
               <Text style={styles.messageTime}>7:03 PM</Text>

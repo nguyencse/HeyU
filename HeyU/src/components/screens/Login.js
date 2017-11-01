@@ -34,7 +34,7 @@ export default class Login extends Component {
     return (
       <View style={styles.container}>
         <StatusBar hidden />
-        <Image source={backgroundLogin} style={styles.background}>
+        <View style={styles.background}>
           <View style={styles.logoContainer}>
             <Text style={styles.appName}>HeyU</Text>
             <Text style={styles.appDescription}>Free chat app</Text>
@@ -47,7 +47,7 @@ export default class Login extends Component {
             </TouchableOpacity>
             <Text style={styles.textSignIn}>Have not any account yet? Sign up</Text>
           </View>
-        </Image>
+        </View>
       </View>
     )
   }

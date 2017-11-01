@@ -5,18 +5,21 @@ import {
 } from 'react-native'
 import styles from '../../styles/Style'
 import colors from '../../colors/Color'
+import * as constants from '../../constants/Constants'
 import { TabNavigator } from 'react-navigation'
 import Toolbar from '../partials/Toolbar'
 import Login from './Login'
 import Messages from './Messages'
-import Contacts from './Contacts'
+import Groups from './Groups'
+import Adding from './Adding'
 import Profile from './Profile'
+import Contacts from './Contacts'
 
 export default Main = TabNavigator({
   Messages: {
     screen: Messages,
     navigationOptions: {
-      header: <Toolbar title='Messages' />,
+      header: <Toolbar title='Messages' buttonRightType={constants.SEARCH}/>,
       tabBarLabel: 'Messages',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -26,10 +29,10 @@ export default Main = TabNavigator({
       )
     }
   },
-  Contacts: {
-    screen: Contacts,
+  Groups: {
+    screen: Groups,
     navigationOptions: {
-      header: <Toolbar title='Contacts' />,
+      header: <Toolbar title={constants.GROUPS}  buttonRightType={constants.PLUS}/>,
       tabBarLabel: 'Contacts',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -39,33 +42,33 @@ export default Main = TabNavigator({
       )
     }
   },
-  Profile: {
-    screen: Profile,
+  Adding: {
+    screen: Adding,
     navigationOptions: {
-      header: <Toolbar title='Profile' />,
+      header: <Toolbar title={constants.ADDING}  />,
       tabBarLabel: 'Profile',
       tabBarIcon: () => (
         <MiddleTabIcon />
       )
     }
   },
-  Profile1: {
-    screen: Profile,
+  Contacts: {
+    screen: Contacts,
     navigationOptions: {
-      header: <Toolbar title='Profile' />,
-      tabBarLabel: 'Profile',
+      header: <Toolbar title={constants.CONTACTS} buttonRightType={constants.SEARCH}/>,
+      tabBarLabel: 'Contacts',
       tabBarIcon: ({ tintColor }) => (
         <Image
-          source={require('../../assets/img/icons/ic-users-green-64dp.png')}
+          source={require('../../assets/img/icons/ic-menu-black-64dp.png')}
           style={[styles.iconTab, { tintColor: tintColor }]}
         />
       )
     }
   },
-  Profile2: {
+  Profile: {
     screen: Profile,
     navigationOptions: {
-      header: <Toolbar title='Profile' />,
+      header: <Toolbar title='Profile' buttonRightType={constants.POWER} />,
       tabBarLabel: 'Profile',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -76,7 +79,7 @@ export default Main = TabNavigator({
     }
   }
 }, {
-    initialRouteName: 'Profile',
+    initialRouteName: 'Adding',
     tabBarPosition: 'bottom',
     animationEnabled: true,
     swipeEnabled: false,

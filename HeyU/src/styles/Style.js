@@ -7,11 +7,8 @@ export default styles = StyleSheet.create({
   },
   background: {
     flex: 1,
-    backgroundColor: colors.primary,
     justifyContent: 'center',
-    width: null,
-    height: null,
-    resizeMode: 'stretch'
+    backgroundColor: colors.primary
   },
   logoContainer: {
     flex: 1,
@@ -169,5 +166,81 @@ export default styles = StyleSheet.create({
     height: 20,
     resizeMode: 'contain',
     tintColor: colors.primary
+  },
+  profileHeader: {
+    flex: 1.5,
+    backgroundColor: colors.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingLeft: 30,
+    paddingRight: 30
+  },
+  profileAvatarContainer: {
+    width: 80,
+    height: 80,
+    borderRadius: 100,
+    overflow: 'hidden'
+  },
+  profileAvatar:{
+    width: 80,
+    height: 80,
+    resizeMode: 'cover',
+    ...Platform.select({
+      android: {
+        borderRadius: 100
+      }
+    })
+  },
+  profileName:{
+    marginTop: 10,
+    fontSize: 16,
+    color: colors.white,
+    fontWeight: 'bold'
+  },
+  profileSummary: {
+    marginTop: 10,
+    color: colors.white,
+    textAlign: 'center'
+  },
+  profileMenuContainer: {
+    flex: 2.5
+  },
+  profileRow: {
+    flex: 1,
+    height: 52,
+    backgroundColor: colors.white
+  },
+  profileRowContent: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingTop: 5,
+    paddingBottom: 5,
+    paddingLeft: 10,
+    paddingRight: 10
+  },
+  profileRowLeftContent: {
+    flex: 2,
+    marginRight: 5,
+    color: colors.black
+  },
+  profileRowMiddleContent: {
+    flex: 4,
+    textAlign: 'right',
+    marginLeft: 5,
+    marginRight: 5,
+    color: colors.grayDark
+  },
+  profileRowRightContent: {
+    flex: 0.5,
+    alignItems: 'flex-end',
+    marginLeft: 5
+  },
+  icon12: {
+    width: 12,
+    height: 12,
+    resizeMode: 'stretch'
   }
 })
