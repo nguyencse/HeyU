@@ -242,5 +242,21 @@ export default styles = StyleSheet.create({
     width: 12,
     height: 12,
     resizeMode: 'stretch'
+  },
+  textInputSearchContainer:{
+    height: 52,
+    paddingLeft: 10,
+    paddingRight: 10,
+    backgroundColor: colors.gray,
+    justifyContent: 'center'
+  },
+  textInputSearch: {
+    height: 32,
+    padding: 5,
+    backgroundColor: colors.white,
+    borderRadius: 3,
+    overflow: 'hidden',
+    fontSize: 12,
+    textAlign: 'center'
   }
 })
