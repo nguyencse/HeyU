@@ -6,14 +6,15 @@ import {
   TouchableOpacity,
   Switch
 } from 'react-native'
-import styles from '../../styles/Style'
-import colors from '../../colors/Color'
-import * as constants from '../../constants/Constants'
+import colors from '../uitls/Color'
+import styles from '../uitls/Style'
+import * as constants from '../uitls/Constants'
+import { icons } from '../uitls/Assets'
 
 export default class MessageItem extends Component {
   constructor(props){
     super(props)
-    iconRight = require('../../assets/img/icons/ic-right-arrow-black-64dp.png')
+    iconRight = icons.rightArrow.uri
     this.state = {
       notificationStatus: true
     }

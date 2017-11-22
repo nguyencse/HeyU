@@ -1,14 +1,11 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text,
   StatusBar,
-  TextInput,
   FlatList
 } from 'react-native'
-import styles from '../../styles/Style'
-import colors from '../../colors/Color'
-import MessageItem from '../partials/MessageItem'
+import styles from '../uitls/Style'
+import MessageItem from '../components/MessageItem'
 
 const dataMessages = [
   { key: 1, name: 'Ryan Giggs', avatar: 'https://goo.gl/q4ZLqm', lastMessage: 'Lorem ipsum dolor...' },
@@ -23,20 +20,15 @@ const dataMessages = [
   { key: 10, name: 'Cristiano Ronaldo', avatar: 'https://goo.gl/osKKce', lastMessage: 'Despacito asd banladesh...' }
 ]
 
-export default class Contacts extends Component {
+export default class Messages extends Component {
   render() {
     return (
       <View style={styles.container}>
         <StatusBar hidden />
-        <View style={styles.textInputSearchContainer}>
-          <TextInput placeholder='Search contact...' style={styles.textInputSearch} />
-        </View>
-        <View style={styles.container}>
-          <FlatList
-            data={dataMessages}
-            renderItem={({ item }) => <MessageItem item={item} />}
-          />
-        </View>
+        <FlatList
+          data={dataMessages}
+          renderItem={({ item }) => <MessageItem item={item} />}
+        />
       </View>
     )
   }

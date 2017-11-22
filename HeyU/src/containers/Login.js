@@ -7,8 +7,9 @@ import {
   TextInput,
   TouchableOpacity
 } from 'react-native'
-import styles from '../../styles/Style'
-import { NavigationActions } from 'react-navigation';
+import styles from '../uitls/Style'
+import { images } from '../uitls/Assets'
+import { NavigationActions } from 'react-navigation'
 
 export default class Login extends Component {
   static navigationOptions = {
@@ -17,7 +18,7 @@ export default class Login extends Component {
 
   constructor(props) {
     super(props)
-    backgroundLogin = require('../../assets/img/background.jpg')
+    backgroundLogin = images.backgroundLogin.uri
   }
 
   onLogin = () => {

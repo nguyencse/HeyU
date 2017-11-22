@@ -5,8 +5,9 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native'
-import styles from '../../styles/Style'
+import styles from '../uitls/Style'
 import Swipeout from 'react-native-swipeout'
+import { icons } from '../uitls/Assets'
 
 export default class MessageItem extends Component {
   onClickItem = (text) => {
@@ -44,7 +45,7 @@ class ButtonDelete extends Component {
   render() {
     return (
       <TouchableOpacity style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center' }}>
-        <Image source={require('../../assets/img/icons/ic-trash-white-64dp.png')} style={{ width: 29, height: 29 }} />
+        <Image source={icons.trash.uri} style={{ width: 29, height: 29 }} />
         <Text style={{ color: 'white' }}>Delete</Text>
       </TouchableOpacity>
     )

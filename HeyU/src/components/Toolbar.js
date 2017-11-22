@@ -5,13 +5,14 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native'
-import styles from '../../styles/Style'
-import * as constants from '../../constants/Constants'
+import styles from '../uitls/Style'
+import * as constants from '../uitls/Constants'
+import { icons } from '../uitls/Assets'
 
 export default class Toolbar extends Component {
   render() {
-    let iconButtonRight = this.props.title === constants.PROFILE ? require('../../assets/img/icons/ic-power-black-64dp.png') :
-                          this.props.title === constants.GROUPS ? require('../../assets/img/icons/ic-plus-white-64dp.png') : require('../../assets/img/icons/ic-search.png')
+    let iconButtonRight = this.props.title === constants.PROFILE ? icons.power.uri :
+                          this.props.title === constants.GROUPS ? icons.plus.uri : icons.search.uri
     return (
       <View style={styles.toolbar}>
         <TouchableOpacity style={styles.toolbarButtonLeft}>
