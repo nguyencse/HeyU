@@ -7,5 +7,7 @@ export default colors = {
   transparent: 'transparent',
   gray: '#cccccc',
   grayLite: '#ecf0f1',
-  grayDark: '#818284'
+  grayDark: '#818284',
+  blueLite: '#38629D',
+  blueDark: '#022665'
 }
