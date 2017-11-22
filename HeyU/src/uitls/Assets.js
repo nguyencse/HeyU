@@ -1,7 +1,7 @@
 let images = {
     backgroundLogin: {
         name: 'background for login',
-        uri: require('../assets/img/background.jpg')
+        uri: require('../assets/img/background-login.jpg')
     },
     avatarDemo: {
         name: 'avatar demo',
