@@ -6,7 +6,8 @@ import {
   StatusBar,
   TextInput,
   TouchableOpacity,
-  StyleSheet
+  StyleSheet,
+  Button
 } from 'react-native'
 import styles from '../uitls/Style'
 import { images } from '../uitls/Assets'
@@ -52,6 +53,9 @@ export default class Login extends Component {
             </View>
           </View>
         </View>
+        <TouchableOpacity onPress={this.onLogin} style={currStyle.button}>
+          <Text style={currStyle.buttonText}>LOGIN</Text>
+        </TouchableOpacity>
       </View>
     )
   }
@@ -99,5 +103,20 @@ const currStyle = StyleSheet.create({
   },
   textInputStyle: {
     flex: 1
+  },
+  button: {
+    position: 'absolute',
+    bottom: height * 0.2,
+    backgroundColor: 'white',
+    height: height * 0.1,
+    width: width * 0.8,
+    marginLeft,
+    marginRight,
+    borderRadius: 5,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonText: {
+    color: colors.blueMedium
   }
 })

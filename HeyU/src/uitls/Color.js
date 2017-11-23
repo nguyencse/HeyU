@@ -9,5 +9,6 @@ export default colors = {
   grayLite: '#ecf0f1',
   grayDark: '#818284',
   blueLite: '#38629D',
+  blueMedium: '#001346',
   blueDark: '#022665'
 }
