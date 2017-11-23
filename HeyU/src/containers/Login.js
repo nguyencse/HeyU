@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import {
   Text,
   View,
@@ -9,30 +10,33 @@ import {
   StyleSheet,
   Button
 } from 'react-native'
+import { connect } from 'react-redux'
+
 import styles from '../uitls/Style'
 import { images } from '../uitls/Assets'
 import { NavigationActions } from 'react-navigation'
 import Dimensions from 'Dimensions'
 import colors from '../uitls/Color'
 import Icon from 'react-native-vector-icons/MaterialIcons'
+import { login } from '../actions/index'
 
 const { width, height } = Dimensions.get('window')
 const marginLeft = width * 0.1
 const marginRight = marginLeft
 
-export default class Login extends Component {
+class Login extends Component {
   static navigationOptions = {
     header: null
   }
 
   onLogin = () => {
-    const resetAction = NavigationActions.reset({
-      index: 0,
-      actions: [
-        NavigationActions.navigate({ routeName: 'Main' })
-      ]
-    })
-    this.props.navigation.dispatch(resetAction)
+    // const resetAction = NavigationActions.reset({
+    //   index: 0,
+    //   actions: [
+    //     NavigationActions.navigate({ routeName: 'Main' })
+    //   ]
+    // })
+    // this.props.navigation.dispatch(resetAction)
   }
 
   render() {
@@ -60,6 +64,23 @@ export default class Login extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => {
+  console.log('state', state)
+  return {
+    authorized: null
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (user) => {
+      dispatch(login(user))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
 const currStyle = StyleSheet.create({
   background: {
