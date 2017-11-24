@@ -13,11 +13,11 @@ import {
 } from 'react-native'
 import { connect } from 'react-redux'
 
-import styles from '../uitls/Style'
-import { images } from '../uitls/Assets'
+import styles from '../uitls/styles'
+import { images } from '../uitls/assets'
 import { NavigationActions } from 'react-navigation'
 import Dimensions from 'Dimensions'
-import colors from '../uitls/Color'
+import colors from '../uitls/colors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { login } from '../actions'
 

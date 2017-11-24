@@ -6,10 +6,10 @@ import {
   TouchableOpacity,
   Switch
 } from 'react-native'
-import colors from '../uitls/Color'
-import styles from '../uitls/Style'
-import * as constants from '../uitls/Constants'
-import { icons } from '../uitls/Assets'
+import colors from '../uitls/colors'
+import styles from '../uitls/styles'
+import * as constants from '../uitls/constants'
+import { icons } from '../uitls/assets'
 
 export default class MessageItem extends Component {
   constructor(props){

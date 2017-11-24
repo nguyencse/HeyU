@@ -3,10 +3,10 @@ import {
   View,
   Image
 } from 'react-native'
-import styles from '../uitls/Style'
-import colors from '../uitls/Color'
-import * as constants from '../uitls/Constants'
-import { icons } from '../uitls/Assets'
+import styles from '../uitls/styles'
+import colors from '../uitls/colors'
+import * as constants from '../uitls/constants'
+import { icons } from '../uitls/assets'
 import { TabNavigator } from 'react-navigation'
 import Toolbar from '../components/Toolbar'
 import Login from './Login'

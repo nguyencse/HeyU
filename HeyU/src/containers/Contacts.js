@@ -6,8 +6,8 @@ import {
   TextInput,
   FlatList
 } from 'react-native'
-import styles from '../uitls/Style'
-import colors from '../uitls/Color'
+import styles from '../uitls/styles'
+import colors from '../uitls/colors'
 import MessageItem from '../components/MessageItem'
 
 const dataMessages = [
