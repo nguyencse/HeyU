@@ -8,7 +8,8 @@ import {
   TextInput,
   TouchableOpacity,
   StyleSheet,
-  Button
+  Button,
+  ActivityIndicator
 } from 'react-native'
 import { connect } from 'react-redux'
 
@@ -18,25 +19,37 @@ import { NavigationActions } from 'react-navigation'
 import Dimensions from 'Dimensions'
 import colors from '../uitls/Color'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { login } from '../actions/index'
+import { login } from '../actions'
 
 const { width, height } = Dimensions.get('window')
 const marginLeft = width * 0.1
 const marginRight = marginLeft
 
 class Login extends Component {
+
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+
   static navigationOptions = {
     header: null
   }
 
   onLogin = () => {
-    // const resetAction = NavigationActions.reset({
-    //   index: 0,
-    //   actions: [
-    //     NavigationActions.navigate({ routeName: 'Main' })
-    //   ]
-    // })
-    // this.props.navigation.dispatch(resetAction)
+    let { email, password } = this.state
+    this.props.login({ email, password })
+  }
+
+  onChangeEmail = (value) => {
+    this.setState({ email: value })
+  }
+
+  onChangePass = (value) => {
+    this.setState({ password: value })
   }
 
   render() {
@@ -47,38 +60,41 @@ class Login extends Component {
         <View style={currStyle.overlay}>
           <View style={currStyle.infoContainer}>
             <View style={currStyle.rowContainer}>
-              <Icon name="account-circle" size={32} color="#fff" style={currStyle.iconsStyle}/>
-              <TextInput style={currStyle.textInputStyle} autoComplete="false" autoCorrect={false} underlineColorAndroid={'transparent'} placeholder='Username' placeholderTextColor={colors.white}/>
+              <Icon name="account-circle" size={32} color="#fff" style={currStyle.iconsStyle} />
+              <TextInput onChangeText={this.onChangeEmail} keyboardType='email-address' style={currStyle.textInputStyle} autoComplete="false" autoCorrect={false} underlineColorAndroid={'transparent'} placeholder='Email' placeholderTextColor={colors.white} />
             </View>
             <View style={currStyle.line} />
             <View style={currStyle.rowContainer}>
-              <Icon name="lock-outline" size={32} color="#fff" style={currStyle.iconsStyle}/>
-              <TextInput style={currStyle.textInputStyle} autoComplete="false" autoCorrect={false} underlineColorAndroid={'transparent'} placeholder='Password' placeholderTextColor={colors.white}/>
+              <Icon name="lock-outline" size={32} color="#fff" style={currStyle.iconsStyle} />
+              <TextInput onChangeText={this.onChangePass} secureTextEntry={true} style={currStyle.textInputStyle} autoComplete="false" autoCorrect={false} underlineColorAndroid={'transparent'} placeholder='Password' placeholderTextColor={colors.white} />
             </View>
           </View>
         </View>
-        <TouchableOpacity onPress={this.onLogin} style={currStyle.button}>
-          <Text style={currStyle.buttonText}>LOGIN</Text>
-        </TouchableOpacity>
+
+        {
+          this.props.errorMsg ? <Text style={currStyle.errorText}>{this.props.errorMsg.replace('.', '').toUpperCase()}</Text> : null
+        }
+
+        {
+          this.props.authorizing ? <ActivityIndicator color={colors.white} size='large' style={[currStyle.button, { backgroundColor: colors.transparent }]} /> :
+            <TouchableOpacity onPress={this.onLogin} style={currStyle.button}>
+              <Text style={currStyle.buttonText}>LOGIN</Text>
+            </TouchableOpacity>
+        }
       </View>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log('state', state)
-  return {
-    authorized: null
-  }
-}
+const mapStateToProps = (state) => ({
+  authorized: state.user.authorized,
+  authorizing: state.user.authorizing,
+  errorMsg: state.user.loginErrorMsg
+})
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    login: (user) => {
-      dispatch(login(user))
-    }
-  }
-}
+const mapDispatchToProps = (dispatch) => ({
+  login: (info) => dispatch(login(info))
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
 
@@ -123,13 +139,14 @@ const currStyle = StyleSheet.create({
     marginRight: 10
   },
   textInputStyle: {
-    flex: 1
+    flex: 1,
+    color: colors.white
   },
   button: {
     position: 'absolute',
     bottom: height * 0.2,
     backgroundColor: 'white',
-    height: height * 0.1,
+    height: height * 0.08,
     width: width * 0.8,
     marginLeft,
     marginRight,
@@ -139,5 +156,14 @@ const currStyle = StyleSheet.create({
   },
   buttonText: {
     color: colors.blueMedium
+  },
+  errorText: {
+    position: 'absolute',
+    bottom: height * 0.33,
+    color: colors.white,
+    alignSelf: 'center',
+    textAlign: 'center',
+    marginLeft,
+    marginRight
   }
 })

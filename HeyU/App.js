@@ -9,23 +9,39 @@ import { StackNavigator } from 'react-navigation'
 import Login from './src/containers/Login'
 import Main from './src/containers/Main'
 import reducer from './src/reducers'
+import firebase from 'firebase'
+import * as configs from './src/configs'
 
-const store = createStore(reducer)
+const loggerMiddleWare = createLogger()
 
-// export default App = StackNavigator({
-//   Login: {
-//     screen: Login
-//   },
-//   Main: {
-//     screen: Main
-//   }
-// })
+const store = createStore(
+  reducer,
+  applyMiddleware(thunkMiddleware)
+)
+
+const FireWall = connect(
+  (state) => ({
+    authorized: state.user.authorized
+  })
+)(({ authorized }) => {
+  if (authorized) {
+    return (<Main />);
+  } else {
+    return (<Login />);
+  }
+})
 
 class App extends Component {
+  componentWillMount() {
+    if (!firebase.apps.length) {
+      firebase.initializeApp(configs.firebaseConfig)
+    }
+  }
+
   render() {
     return (
       <Provider store={store}>
-        <Login />
+        <FireWall />
       </Provider>
     )
   }

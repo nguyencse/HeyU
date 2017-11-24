@@ -26,9 +26,7 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             return Arrays.<ReactPackage>asList(
                     new RNDeviceInfo(),
-                    new MainReactPackage(),
-                    new VectorIconsPackage()
-            );
+                    new MainReactPackage());
         }
 
         @Override
