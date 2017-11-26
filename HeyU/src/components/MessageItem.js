@@ -5,9 +5,9 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native'
-import styles from '../uitls/Style'
+import styles from '../uitls/styles'
 import Swipeout from 'react-native-swipeout'
-import { icons } from '../uitls/Assets'
+import { icons } from '../uitls/assets'
 
 export default class MessageItem extends Component {
   onClickItem = (text) => {

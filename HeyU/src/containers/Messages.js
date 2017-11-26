@@ -4,7 +4,7 @@ import {
   StatusBar,
   FlatList
 } from 'react-native'
-import styles from '../uitls/Style'
+import styles from '../uitls/styles'
 import MessageItem from '../components/MessageItem'
 
 const dataMessages = [

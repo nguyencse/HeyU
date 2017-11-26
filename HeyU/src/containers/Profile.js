@@ -6,9 +6,9 @@ import {
   Image,
   FlatList
 } from 'react-native'
-import styles from '../uitls/Style'
+import styles from '../uitls/styles'
 import ProfileItem from '../components/ProfileItem'
-import { images } from '../uitls/Assets'
+import { images } from '../uitls/assets'
 
 const dataProfile = [
   {key: 1, title: 'Email address', value: 'nguyencse.ninhhoa@example.com'},
@@ -23,7 +23,7 @@ const dataProfile = [
 export default class Contacts extends Component {
   constructor(props){
     super(props)
-    avatar = images.avatarDemo.uri
+    avatar = images.avatarDefault.uri
   }
 
   render() {

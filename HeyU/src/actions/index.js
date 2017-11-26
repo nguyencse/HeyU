@@ -1,4 +1,4 @@
-import * as constants from '../uitls/Constants'
+import * as constants from '../uitls/constants'
 import firebase from 'firebase'
 
 export const login = (info) => {

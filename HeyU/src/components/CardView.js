@@ -5,8 +5,8 @@ import {
   Image,
   TouchableOpacity
 } from 'react-native'
-import styles from '../uitls/Style'
-import * as constants from '../uitls/Constants'
+import styles from '../uitls/styles'
+import * as constants from '../uitls/constants'
 
 export default class CardView extends Component {
   render() {

@@ -4,7 +4,7 @@ import {
   Text,
   StatusBar
 } from 'react-native'
-import styles from '../uitls/Style'
+import styles from '../uitls/styles'
 
 export default class Adding extends Component {
   render() {

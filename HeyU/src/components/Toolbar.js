@@ -5,9 +5,9 @@ import {
   TouchableOpacity,
   Image
 } from 'react-native'
-import styles from '../uitls/Style'
-import * as constants from '../uitls/Constants'
-import { icons } from '../uitls/Assets'
+import styles from '../uitls/styles'
+import * as constants from '../uitls/constants'
+import { icons } from '../uitls/assets'
 
 export default class Toolbar extends Component {
   render() {
