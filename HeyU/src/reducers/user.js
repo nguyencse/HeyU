@@ -1,4 +1,4 @@
-import * as constants from '../uitls/Constants'
+import * as constants from '../uitls/constants'
 
 const initialState = {
   displayName: null,
