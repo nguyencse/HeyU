@@ -161,6 +161,7 @@ const currStyle = StyleSheet.create({
     position: 'absolute',
     bottom: height * 0.33,
     color: colors.white,
+    backgroundColor: 'transparent',
     alignSelf: 'center',
     textAlign: 'center',
     marginLeft,
