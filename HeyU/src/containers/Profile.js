@@ -23,7 +23,7 @@ const dataProfile = [
 export default class Contacts extends Component {
   constructor(props){
     super(props)
-    avatar = images.avatarDemo.uri
+    avatar = images.avatarDefault.uri
   }
 
   render() {
