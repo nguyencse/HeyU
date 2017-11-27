@@ -17,7 +17,7 @@ const store = createStore(
 )
 
 const FireWall = StackNavigator({
-  Login: { screen: Login },
+  Login: { screen: Main }, // TESTING
   Main: { screen: Main }
 })
 

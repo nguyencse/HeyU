@@ -6,6 +6,9 @@ import {
   TextInput,
   FlatList
 } from 'react-native'
+
+import { connect } from 'react-redux'
+import { fetchContacts } from '../actions'
 import styles from '../uitls/styles'
 import colors from '../uitls/colors'
 import MessageItem from '../components/MessageItem'
@@ -23,8 +26,15 @@ const dataMessages = [
   { key: 10, name: 'Cristiano Ronaldo', avatar: 'https://goo.gl/osKKce', lastMessage: 'Despacito asd banladesh...' }
 ]
 
-export default class Contacts extends Component {
+class Contacts extends Component {
+
+  componentDidMount(){
+    this.props.fetchContacts()
+  }
+
   render() {
+    console.log(this.props.contacts)
+
     return (
       <View style={styles.container}>
         <StatusBar hidden />
@@ -33,7 +43,8 @@ export default class Contacts extends Component {
         </View>
         <View style={styles.container}>
           <FlatList
-            data={dataMessages}
+            keyExtractor={(item) => item.uid}
+            data={this.props.contacts}
             renderItem={({ item }) => <MessageItem item={item} />}
           />
         </View>
@@ -41,3 +52,13 @@ export default class Contacts extends Component {
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  contacts: state.contacts
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  fetchContacts: () => dispatch(fetchContacts())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Contacts)

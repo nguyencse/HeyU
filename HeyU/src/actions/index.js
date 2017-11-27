@@ -1,6 +1,7 @@
 import * as constants from '../uitls/constants'
 import firebase from 'firebase'
 
+// AUTHENTICATION
 export const signup = (info) => {
   return (dispatch) => {
     dispatch(startAuthenticating())
@@ -86,5 +87,29 @@ export const addUserToDB = (user) => {
       creationTime: user.creationTime,
       lastSignInTime: user.lastSignInTime
     })
+  }
+}
+
+
+// CONTACTS
+export const fetchContacts = (contacts) => {
+  return (dispatch) => {
+
+    let ref = firebase.database().ref('users')
+    let contacts = []
+
+    ref.once('value', (snapshot) => {
+      snapshot.forEach((childSnapshot) => {
+        let uid = childSnapshot.key
+        let contact = childSnapshot.val()
+        alert(contact.uid)
+        contacts.push(contact)
+      })
+    })
+
+    return {
+      type: constants.ACTION_FETCH_CONTACTS,
+      contacts
+    }
   }
 }
