@@ -1,6 +1,7 @@
 import * as constants from '../uitls/constants'
 
 const initialState = {
+  uid: null,
   displayName: null,
   email: null,
   phoneNumber: null,
@@ -25,9 +26,10 @@ const user = (state = initialState, action) => {
         authorizing: false
       }
     case constants.ACTION_LOGIN_SET_USER:
-      let { email, creationTime, lastSignInTime } = action.user
+      let { uid, email, creationTime, lastSignInTime } = action.user
       return {
         ...state,
+        uid,
         email,
         creationTime,
         lastSignInTime,

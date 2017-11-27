@@ -16,17 +16,11 @@ const store = createStore(
   applyMiddleware(thunkMiddleware)
 )
 
-const FireWall = connect(
-  (state) => ({
-    authorized: state.user.authorized
-  })
-)(({ authorized }) => {
-  if (authorized) {
-    return (<Main />)
-  } else {
-    return (<Main />)
-  }
+const FireWall = StackNavigator({
+  Login: { screen: Login },
+  Main: { screen: Main }
 })
+
 
 class App extends Component {
   componentWillMount() {

@@ -19,18 +19,17 @@ import { NavigationActions } from 'react-navigation'
 import Dimensions from 'Dimensions'
 import colors from '../uitls/colors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
-import { login } from '../actions'
-
-//Testing
-import Toolbar from '../components/Toolbar'
-import * as constants from '../uitls/constants'
-
+import { signup } from '../actions'
 
 const { width, height } = Dimensions.get('window')
 const marginLeft = width * 0.1
 const marginRight = marginLeft
 
 class Login extends Component {
+
+  static navigationOptions = {
+    header: null,
+  }
 
   constructor(props) {
     super(props)
@@ -40,9 +39,15 @@ class Login extends Component {
     }
   }
 
+  componentWillUpdate(){
+    if(this.props.authorized){
+      this.props.navigation.navigate('Main')
+    }
+  }
+
   onLogin = () => {
     let { email, password } = this.state
-    this.props.login({ email, password })
+    this.props.signup({ email, password })
   }
 
   onChangeEmail = (value) => {
@@ -82,8 +87,6 @@ class Login extends Component {
               <Text style={currStyle.buttonText}>LOGIN</Text>
             </TouchableOpacity>
         }
-
-        <Toolbar title={constants.TOOLBAR_TITLE_MESSAGES}/>
       </View>
     )
   }
@@ -96,7 +99,7 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-  login: (info) => dispatch(login(info))
+  signup: (info) => dispatch(signup(info))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)
@@ -151,11 +154,11 @@ const currStyle = StyleSheet.create({
     backgroundColor: 'white',
     height: height * 0.08,
     width: width * 0.8,
-    marginLeft,
-    marginRight,
     borderRadius: 5,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginLeft,
+    marginRight
   },
   buttonText: {
     color: colors.blueMedium

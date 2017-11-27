@@ -11,14 +11,20 @@ export const signup = (info) => {
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
 
-        let { email, metadata } = firebase.auth().currentUser
+        let { uid, displayName, email, phoneNumber, photoURL, metadata } = firebase.auth().currentUser
+
         let user = {
+          uid,
+          displayName,
           email,
+          phoneNumber,
+          photoURL,
           creationTime: metadata.a,
           lastSignInTime: metadata.b
         }
 
         dispatch(setUserInfo(user))
+        dispatch(addUserToDB(user))
         dispatch(stopAuthenticating())
       })
       .catch((error) => {
@@ -68,3 +74,17 @@ export const setErrorMessage = (error) => ({
   type: constants.ACTION_LOGIN_SET_ERROR_MSG,
   errorMsg: error.message
 })
+
+export const addUserToDB = (user) => {
+  return () => {
+    firebase.database().ref('/users/' + user.uid).set({
+      uid: user.uid,
+      displayName: user.displayName,
+      email: user.email,
+      phoneNumber: user.phoneNumber,
+      photoURL: user.photoURL,
+      creationTime: user.creationTime,
+      lastSignInTime: user.lastSignInTime
+    })
+  }
+}
