@@ -20,7 +20,7 @@ export default Main = TabNavigator({
   Messages: {
     screen: Messages,
     navigationOptions: {
-      header: <Toolbar title='Messages' buttonRightType={constants.SEARCH}/>,
+      header: <Toolbar title={constants.TOOLBAR_TITLE_MESSAGES} />,
       tabBarLabel: 'Messages',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -33,7 +33,7 @@ export default Main = TabNavigator({
   Groups: {
     screen: Groups,
     navigationOptions: {
-      header: <Toolbar title={constants.GROUPS}  buttonRightType={constants.PLUS}/>,
+      header: <Toolbar title={constants.TOOLBAR_TITLE_GROUPS} />,
       tabBarLabel: 'Contacts',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -46,7 +46,7 @@ export default Main = TabNavigator({
   Adding: {
     screen: Adding,
     navigationOptions: {
-      header: <Toolbar title={constants.ADDING}  />,
+      header: <Toolbar title={constants.TOOLBAR_TITLE_ADDING} />,
       tabBarLabel: 'Profile',
       tabBarIcon: () => (
         <MiddleTabIcon />
@@ -56,7 +56,7 @@ export default Main = TabNavigator({
   Contacts: {
     screen: Contacts,
     navigationOptions: {
-      header: <Toolbar title={constants.CONTACTS} buttonRightType={constants.SEARCH}/>,
+      header: <Toolbar title={constants.TOOLBAR_TITLE_CONTACTS} />,
       tabBarLabel: 'Contacts',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -69,7 +69,7 @@ export default Main = TabNavigator({
   Profile: {
     screen: Profile,
     navigationOptions: {
-      header: <Toolbar title='Profile' buttonRightType={constants.POWER} />,
+      header: <Toolbar title={constants.TOOLBAR_TITLE_PROFILE} />,
       tabBarLabel: 'Profile',
       tabBarIcon: ({ tintColor }) => (
         <Image
@@ -105,15 +105,15 @@ export default Main = TabNavigator({
     }
   })
 
-  class MiddleTabIcon extends Component{
-    render(){
-      return(
-        <View style={styles.iconTabMiddleContainer}>
-          <Image
-            source={icons.plus.uri}
-            style={[styles.iconTabMiddle, { tintColor: 'white' }]}
-          />
-        </View>
-      )
-    }
+class MiddleTabIcon extends Component {
+  render() {
+    return (
+      <View style={styles.iconTabMiddleContainer}>
+        <Image
+          source={icons.plus.uri}
+          style={[styles.iconTabMiddle, { tintColor: 'white' }]}
+        />
+      </View>
+    )
   }
+}

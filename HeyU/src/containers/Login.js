@@ -21,6 +21,11 @@ import colors from '../uitls/colors'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { login } from '../actions'
 
+//Testing
+import Toolbar from '../components/Toolbar'
+import * as constants from '../uitls/constants'
+
+
 const { width, height } = Dimensions.get('window')
 const marginLeft = width * 0.1
 const marginRight = marginLeft
@@ -33,10 +38,6 @@ class Login extends Component {
       email: '',
       password: ''
     }
-  }
-
-  static navigationOptions = {
-    header: null
   }
 
   onLogin = () => {
@@ -81,6 +82,8 @@ class Login extends Component {
               <Text style={currStyle.buttonText}>LOGIN</Text>
             </TouchableOpacity>
         }
+
+        <Toolbar title={constants.TOOLBAR_TITLE_MESSAGES}/>
       </View>
     )
   }

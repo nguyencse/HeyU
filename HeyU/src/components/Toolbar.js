@@ -11,8 +11,8 @@ import { icons } from '../uitls/assets'
 
 export default class Toolbar extends Component {
   render() {
-    let iconButtonRight = this.props.title === constants.PROFILE ? icons.power.uri :
-                          this.props.title === constants.GROUPS ? icons.plus.uri : icons.search.uri
+    let iconButtonRight = this.props.title === constants.TOOLBAR_TITLE_PROFILE ? icons.power.uri :
+                          this.props.title === constants.TOOLBAR_TITLE_GROUPS ? icons.plus.uri : icons.search.uri
     return (
       <View style={styles.toolbar}>
         <TouchableOpacity style={styles.toolbarButtonLeft}>

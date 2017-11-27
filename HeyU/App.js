@@ -3,7 +3,6 @@ import React, { Component } from 'react'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider, connect } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
-import { createLogger } from 'redux-logger'
 
 import { StackNavigator } from 'react-navigation'
 import Login from './src/containers/Login'
@@ -11,8 +10,6 @@ import Main from './src/containers/Main'
 import reducer from './src/reducers'
 import firebase from 'firebase'
 import * as configs from './src/configs'
-
-const loggerMiddleWare = createLogger()
 
 const store = createStore(
   reducer,
@@ -25,9 +22,9 @@ const FireWall = connect(
   })
 )(({ authorized }) => {
   if (authorized) {
-    return (<Main />);
+    return (<Main />)
   } else {
-    return (<Login />);
+    return (<Main />)
   }
 })
 

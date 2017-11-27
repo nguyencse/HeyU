@@ -1,14 +1,16 @@
 import * as constants from '../uitls/constants'
 import firebase from 'firebase'
 
-export const login = (info) => {
+export const signup = (info) => {
   return (dispatch) => {
-    dispatch(startLogin())
+    dispatch(startAuthenticating())
 
     let { email, password } = info
 
-    firebase.auth().createUserWithEmailAndPassword(email, password)
+    firebase.auth()
+      .createUserWithEmailAndPassword(email, password)
       .then(() => {
+
         let { email, metadata } = firebase.auth().currentUser
         let user = {
           email,
@@ -17,18 +19,45 @@ export const login = (info) => {
         }
 
         dispatch(setUserInfo(user))
-        dispatch(stopLogin())
+        dispatch(stopAuthenticating())
       })
       .catch((error) => {
         dispatch(setErrorMessage(error))
-        dispatch(stopLogin())
+        dispatch(stopAuthenticating())
       })
   }
 }
 
-export const startLogin = () => ({ type: constants.ACTION_LOGIN_START })
+export const login = (info) => {
+  return (dispatch) => {
+    dispatch(startAuthenticating())
 
-export const stopLogin = () => ({ type: constants.ACTION_LOGIN_STOP })
+    let { email, password } = info
+
+    firebase.auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+
+        let { email, metadata } = firebase.auth().currentUser
+        let user = {
+          email,
+          creationTime: metadata.a,
+          lastSignInTime: metadata.b
+        }
+
+        dispatch(setUserInfo(user))
+        dispatch(stopAuthenticating())
+      })
+      .catch((error) => {
+        dispatch(setErrorMessage(error))
+        dispatch(stopAuthenticating())
+      })
+  }
+}
+
+export const startAuthenticating = () => ({ type: constants.ACTION_LOGIN_START })
+
+export const stopAuthenticating = () => ({ type: constants.ACTION_LOGIN_STOP })
 
 export const setUserInfo = (user) => ({
   type: constants.ACTION_LOGIN_SET_USER,
